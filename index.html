@@ -28,15 +28,24 @@
                         display: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
-                        navy: {
-                            800: '#162542',
-                            900: '#0F172A',
-                            950: '#090E1A',
+                        forest: {
+                            800: '#0E5236',
+                            900: '#0A402A',
+                            950: '#06291B',
                         },
-                        gold: {
-                            400: '#FBBF24',
-                            500: '#F59E0B',
-                            600: '#D97706',
+                        brandOrange: {
+                            400: '#FB923C',
+                            500: '#F97316',
+                            600: '#EA580C',
+                        },
+                        brandBlue: {
+                            600: '#0268B8',
+                            700: '#02589B',
+                            800: '#02457A',
+                        },
+                        brandEmerald: {
+                            500: '#10B981',
+                            600: '#059669',
                         }
                     },
                     animation: {
@@ -53,21 +62,21 @@
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brandOrange-500 selection:text-white flex flex-col min-h-screen">
 
     <!-- ===================================================================== -->
     <!-- 0. TOP INFO BAR (JAM OPERASIONAL & KONTAK CEPAT)                      -->
     <!-- ===================================================================== -->
-    <div class="bg-navy-950 text-slate-300 text-xs border-b border-white/10">
+    <div class="bg-forest-950 text-slate-200 text-xs border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1">
-                <span class="inline-flex items-center gap-1.5 text-slate-300">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span class="inline-flex items-center gap-1.5 text-slate-200">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandOrange-400"></i>
                     <span>Jl. Aru No. 13 Kepatihan Wetan, Jebres, Surakarta</span>
                 </span>
                 <span class="hidden md:inline text-white/20">|</span>
-                <a href="mailto:uptd.pkl@surakarta.go.id" class="inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
-                    <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400"></i>
+                <a href="mailto:uptd.pkl@surakarta.go.id" class="inline-flex items-center gap-1.5 hover:text-brandOrange-400 transition-colors">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-brandOrange-400"></i>
                     <span>uptd.pkl@surakarta.go.id</span>
                 </a>
             </div>
@@ -81,51 +90,95 @@
     </div>
 
     <!-- ===================================================================== -->
-    <!-- 1. NAVBAR STICKY (GLASSMORPHISM)                                      -->
+    <!-- 1. NAVBAR STICKY (GLASSMORPHISM + EMBLEM RESMI UPTD PPKL)             -->
     <!-- ===================================================================== -->
-    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+    <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo & Identitas Instansi -->
-                <a href="#beranda" class="flex items-center gap-3.5 group focus:outline-none">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center text-amber-400 shadow-md shadow-navy-900/20 group-hover:scale-105 transition-transform duration-200">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 21h18"/>
-                            <path d="M5 21V7l8-4v18"/>
-                            <path d="M19 21V11l-6-4"/>
-                            <path d="M9 9v.01"/>
-                            <path d="M9 12v.01"/>
-                            <path d="M9 15v.01"/>
-                            <path d="M9 18v.01"/>
+                <!-- Logo Resmi UPTD PPKL & Identitas Instansi -->
+                <a href="#beranda" class="flex items-center gap-3 group focus:outline-none">
+                    <!-- Custom SVG Emblem UPTD PPKL -->
+                    <div class="w-12 h-12 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-sm" xmlns="http://www.w3.org/2000/svg" aria-label="Logo UPTD PPKL Surakarta">
+                            <!-- Outer Blue Circular Arrow Ring -->
+                            <path d="M 48 38 A 78 78 0 1 1 28 130" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                            <path d="M 25 118 A 78 78 0 0 1 43 44" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                            <!-- Arrowhead top-left -->
+                            <polygon points="22,42 54,30 44,62" fill="#02589B"/>
+                            <!-- Right Orange Industrial Gear Cog Arc -->
+                            <path d="M 100 32 A 68 68 0 0 1 168 100 A 68 68 0 0 1 65 158" fill="none" stroke="#F97316" stroke-width="13" stroke-linecap="butt"/>
+                            <!-- Gear Teeth -->
+                            <g fill="#F97316">
+                                <rect x="114" y="19" width="14" height="12" rx="2" transform="rotate(14 121 25)"/>
+                                <rect x="145" y="34" width="14" height="12" rx="2" transform="rotate(38 152 40)"/>
+                                <rect x="166" y="61" width="14" height="12" rx="2" transform="rotate(64 173 67)"/>
+                                <rect x="171" y="94" width="14" height="12" rx="2" transform="rotate(90 178 100)"/>
+                                <rect x="162" y="126" width="14" height="12" rx="2" transform="rotate(116 169 132)"/>
+                                <rect x="139" y="152" width="14" height="12" rx="2" transform="rotate(142 146 158)"/>
+                                <rect x="108" y="166" width="14" height="12" rx="2" transform="rotate(168 115 172)"/>
+                                <rect x="75" y="162" width="14" height="12" rx="2" transform="rotate(194 82 168)"/>
+                            </g>
+                            <!-- White Rivet Dots on Orange Gear -->
+                            <g fill="#FFFFFF">
+                                <circle cx="122" cy="36" r="2.8"/>
+                                <circle cx="147" cy="54" r="2.8"/>
+                                <circle cx="163" cy="80" r="2.8"/>
+                                <circle cx="165" cy="111" r="2.8"/>
+                                <circle cx="151" cy="138" r="2.8"/>
+                                <circle cx="126" cy="157" r="2.8"/>
+                                <circle cx="95" cy="163" r="2.8"/>
+                            </g>
+                            <!-- Left Emerald Green Leaf / Padi Sprig -->
+                            <path d="M 65 156 C 34 126, 32 68, 78 36" fill="none" stroke="#059669" stroke-width="4.5" stroke-linecap="round"/>
+                            <g fill="#059669">
+                                <ellipse cx="52" cy="144" rx="11" ry="5" transform="rotate(28 52 144)"/>
+                                <ellipse cx="42" cy="122" rx="12" ry="5" transform="rotate(42 42 122)"/>
+                                <ellipse cx="38" cy="98" rx="12" ry="5" transform="rotate(62 38 98)"/>
+                                <ellipse cx="43" cy="74" rx="12" ry="5" transform="rotate(84 43 74)"/>
+                                <ellipse cx="55" cy="53" rx="12" ry="5" transform="rotate(112 55 53)"/>
+                                <ellipse cx="75" cy="38" rx="12" ry="5" transform="rotate(142 75 38)"/>
+                                <!-- Inner leaves -->
+                                <ellipse cx="59" cy="128" rx="10" ry="4.5" transform="rotate(-24 59 128)"/>
+                                <ellipse cx="52" cy="105" rx="10" ry="4.5" transform="rotate(-10 52 105)"/>
+                                <ellipse cx="53" cy="82" rx="10" ry="4.5" transform="rotate(12 53 82)"/>
+                                <ellipse cx="63" cy="61" rx="10" ry="4.5" transform="rotate(35 63 61)"/>
+                            </g>
+                            <!-- Deep Forest Green Inner Circle -->
+                            <circle cx="100" cy="100" r="46" fill="#0A402A"/>
+                            <!-- Thin Orange Inner Ring -->
+                            <circle cx="100" cy="100" r="41" fill="none" stroke="#F97316" stroke-width="2.5"/>
+                            <!-- Bold White Text: UPTD PPKL -->
+                            <text x="100" y="95" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">UPTD</text>
+                            <text x="100" y="119" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">PPKL</text>
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-display font-bold text-base sm:text-lg text-navy-900 leading-tight tracking-tight">
+                        <span class="font-display font-extrabold text-sm sm:text-base text-forest-900 leading-tight tracking-tight">
                             UPTD Pengelolaan PKL
                         </span>
-                        <span class="text-xs font-medium text-slate-500 tracking-wide">
-                            Dinas Perdagangan Kota Surakarta
+                        <span class="text-[11px] sm:text-xs font-semibold text-brandOrange-600 tracking-wide">
+                            Kota Surakarta
                         </span>
                     </div>
                 </a>
 
                 <!-- Navigasi Desktop -->
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="#beranda" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Beranda</a>
-                    <a href="#layanan-data" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Layanan Data</a>
-                    <a href="#tentang-uptd" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Tugas & Fungsi</a>
-                    <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Kontak & Lokasi</a>
+                    <a href="#beranda" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Beranda</a>
+                    <a href="#layanan-data" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Layanan Data</a>
+                    <a href="#tentang-uptd" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Tugas & Fungsi</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Kontak & Lokasi</a>
                 </nav>
 
                 <!-- Tombol Aksi Cepat & Menu Mobile -->
                 <div class="flex items-center gap-3">
-                    <a href="#layanan-data" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-sm font-medium shadow-sm hover:shadow transition-all duration-200">
-                        <i data-lucide="database" class="w-4 h-4 text-amber-400"></i>
+                    <a href="#layanan-data" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white text-sm font-semibold shadow-sm hover:shadow transition-all duration-200">
+                        <i data-lucide="database" class="w-4 h-4 text-brandOrange-400"></i>
                         <span>Akses Portal Data</span>
                     </a>
                     
                     <!-- Hamburger Button Mobile -->
-                    <button id="mobile-menu-btn" type="button" aria-label="Buka menu navigasi" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors">
+                    <button id="mobile-menu-btn" type="button" aria-label="Buka menu navigasi" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-forest-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brandOrange-500 transition-colors">
                         <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
                         <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
                     </button>
@@ -135,13 +188,13 @@
 
         <!-- Dropdown Navigasi Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2 shadow-lg">
-            <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-navy-900 hover:bg-slate-50">Beranda</a>
-            <a href="#layanan-data" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-navy-900 hover:bg-slate-50">Layanan Data</a>
-            <a href="#tentang-uptd" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-navy-900 hover:bg-slate-50">Tugas & Fungsi</a>
-            <a href="#kontak" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-navy-900 hover:bg-slate-50">Kontak & Lokasi</a>
+            <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Beranda</a>
+            <a href="#layanan-data" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Layanan Data</a>
+            <a href="#tentang-uptd" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Tugas & Fungsi</a>
+            <a href="#kontak" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Kontak & Lokasi</a>
             <div class="pt-2">
-                <a href="#layanan-data" class="mobile-nav-link flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-navy-900 text-white text-sm font-semibold">
-                    <i data-lucide="database" class="w-4 h-4 text-amber-400"></i>
+                <a href="#layanan-data" class="mobile-nav-link flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-forest-900 text-white text-sm font-semibold">
+                    <i data-lucide="database" class="w-4 h-4 text-brandOrange-400"></i>
                     <span>Akses Portal Data</span>
                 </a>
             </div>
@@ -149,48 +202,241 @@
     </header>
 
     <!-- ===================================================================== -->
-    <!-- 2. HERO SECTION                                                       -->
+    <!-- 2. HERO SECTION (BANNER ORNAMEN PKL + CREST SURAKARTA + LOGO UPTD)    -->
     <!-- ===================================================================== -->
     <main class="flex-grow">
-        <section id="beranda" class="relative overflow-hidden bg-navy-900 text-white pt-16 pb-24 sm:pt-24 sm:pb-32">
-            <!-- Dekorasi Background Modern -->
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/15 via-navy-900 to-navy-950 pointer-events-none"></div>
-            <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <section id="beranda" class="relative overflow-hidden bg-white pt-14 pb-24 sm:pt-20 sm:pb-32 border-b border-slate-200/80">
             
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl animate-fade-in-up">
+            <!-- Ornamen Latar Belakang Ilustrasi Kawasan PKL (Left & Right Street Market Vector Scene) -->
+            <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+                <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" class="w-full h-full opacity-45 sm:opacity-55" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Langit & Latar Jalan Kota -->
+                    <rect width="1440" height="560" fill="#F8FAFC"/>
+                    <!-- Jalan Raya Perspektif Tengah -->
+                    <polygon points="560,240 880,240 1120,560 320,560" fill="#CBD5E1"/>
+                    <polygon points="712,240 728,240 742,560 698,560" fill="#86EFAC"/>
+                    <!-- Marka Jalan Putus-putus -->
+                    <g fill="#FFFFFF" opacity="0.85">
+                        <polygon points="632,275 640,275 634,315 624,315"/>
+                        <polygon points="614,355 624,355 615,410 602,410"/>
+                        <polygon points="590,460 603,460 591,535 574,535"/>
+                        <polygon points="800,275 808,275 816,315 806,315"/>
+                        <polygon points="816,355 826,355 838,410 825,410"/>
+                        <polygon points="837,460 850,460 866,535 849,535"/>
+                    </g>
+
+                    <!-- SISI KIRI: DERETAN TENDA & GEROBAK PKL (NASI GORENG, SATE AYAM, DLL) -->
+                    <g opacity="0.9">
+                        <!-- Bangunan Latar Kiri -->
+                        <rect x="0" y="40" width="220" height="320" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+                        <rect x="220" y="90" width="190" height="270" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+                        <rect x="410" y="140" width="140" height="220" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+                        <!-- Jendela Bangunan Kiri -->
+                        <rect x="30" y="75" width="45" height="55" rx="4" fill="#CBD5E1"/>
+                        <rect x="95" y="75" width="45" height="55" rx="4" fill="#CBD5E1"/>
+                        <rect x="245" y="120" width="40" height="50" rx="4" fill="#CBD5E1"/>
+                        <rect x="305" y="120" width="40" height="50" rx="4" fill="#CBD5E1"/>
+
+                        <!-- Tenda PKL Kiri 2 (Sate Ayam - Oranye/Krem) -->
+                        <polygon points="270,220 460,220 485,265 250,265" fill="#FDBA74" stroke="#EA580C" stroke-width="2"/>
+                        <rect x="315" y="232" width="105" height="24" rx="4" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5"/>
+                        <text x="367" y="248" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="11" fill="#854D0E">SATE AYAM</text>
+                        <line x1="275" y1="265" x2="275" y2="395" stroke="#64748B" stroke-width="4"/>
+                        <line x1="455" y1="265" x2="455" y2="395" stroke="#64748B" stroke-width="4"/>
+                        <!-- Gerobak Sate -->
+                        <rect x="295" y="315" width="130" height="65" rx="6" fill="#FDE68A" stroke="#B45309" stroke-width="2"/>
+                        <rect x="295" y="280" width="130" height="35" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
+
+                        <!-- Tenda PKL Kiri Utama (Nasi Goreng Kaki Lima - Biru & Kuning) -->
+                        <polygon points="15,175 290,175 325,235 -5,235" fill="#3B82F6" stroke="#1D4ED8" stroke-width="2.5"/>
+                        <!-- Banner Kuning Tenda -->
+                        <rect x="65" y="190" width="180" height="36" rx="5" fill="#FACC15" stroke="#CA8A04" stroke-width="2"/>
+                        <text x="155" y="206" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#713F12">NASI GORENG</text>
+                        <text x="155" y="220" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="11" fill="#713F12">KAKI LIMA</text>
+                        <!-- Tiang Tenda -->
+                        <line x1="30" y1="235" x2="30" y2="465" stroke="#475569" stroke-width="5"/>
+                        <line x1="280" y1="235" x2="280" y2="450" stroke="#475569" stroke-width="5"/>
+                        <!-- Gerobak Nasi Goreng -->
+                        <rect x="45" y="325" width="185" height="95" rx="8" fill="#E2E8F0" stroke="#475569" stroke-width="2.5"/>
+                        <rect x="45" y="268" width="185" height="57" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+                        <rect x="60" y="278" width="75" height="38" rx="3" fill="#BAE6FD"/>
+                        <circle cx="85" cy="432" r="22" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                        <circle cx="85" cy="432" r="9" fill="#94A3B8"/>
+                        <circle cx="195" cy="432" r="22" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                        <circle cx="195" cy="432" r="9" fill="#94A3B8"/>
+                        <!-- Meja & Kursi Pembeli Kiri -->
+                        <rect x="115" y="455" width="95" height="14" rx="4" fill="#60A5FA" stroke="#1D4ED8" stroke-width="2"/>
+                        <rect x="130" y="469" width="8" height="45" fill="#1E40AF"/>
+                        <rect x="188" y="469" width="8" height="45" fill="#1E40AF"/>
+                        <rect x="82" y="472" width="28" height="38" rx="4" fill="#93C5FD" stroke="#2563EB" stroke-width="1.5"/>
+                        <rect x="215" y="472" width="28" height="38" rx="4" fill="#93C5FD" stroke="#2563EB" stroke-width="1.5"/>
+                    </g>
+
+                    <!-- SISI KANAN: DERETAN LAPAK BUAH SEGAR, MARTABAK TELOR, PANGKAS RAMBUT -->
+                    <g opacity="0.9">
+                        <!-- Bangunan Latar Kanan -->
+                        <rect x="1220" y="35" width="220" height="335" fill="#FED7AA" stroke="#EA580C" stroke-width="2"/>
+                        <rect x="1030" y="85" width="190" height="285" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+                        <rect x="890" y="135" width="140" height="235" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+                        <!-- Jendela Bangunan Kanan -->
+                        <rect x="1255" y="70" width="45" height="55" rx="4" fill="#FDBA74"/>
+                        <rect x="1325" y="70" width="45" height="55" rx="4" fill="#FDBA74"/>
+                        <rect x="1065" y="115" width="40" height="50" rx="4" fill="#FDE68A"/>
+                        <rect x="1125" y="115" width="40" height="50" rx="4" fill="#FDE68A"/>
+
+                        <!-- Lapak Buah Segar (Kanan Tengah) -->
+                        <polygon points="990,205 1235,205 1255,255 970,255" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+                        <rect x="1045" y="218" width="125" height="26" rx="4" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5"/>
+                        <text x="1107" y="235" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#854D0E">BUAH SEGAR</text>
+                        <line x1="995" y1="255" x2="995" y2="425" stroke="#475569" stroke-width="4"/>
+                        <line x1="1225" y1="255" x2="1225" y2="425" stroke="#475569" stroke-width="4"/>
+                        <!-- Display Buah Warna-warni -->
+                        <rect x="1010" y="325" width="195" height="85" rx="6" fill="#FDE68A" stroke="#B45309" stroke-width="2"/>
+                        <circle cx="1040" cy="316" r="10" fill="#EF4444"/>
+                        <circle cx="1062" cy="316" r="10" fill="#F97316"/>
+                        <circle cx="1084" cy="316" r="10" fill="#22C55E"/>
+                        <circle cx="1106" cy="316" r="10" fill="#EAB308"/>
+                        <circle cx="1128" cy="316" r="10" fill="#EF4444"/>
+                        <circle cx="1150" cy="316" r="10" fill="#F97316"/>
+                        <circle cx="1172" cy="316" r="10" fill="#22C55E"/>
+
+                        <!-- Papan Pangkas Rambut -->
+                        <rect x="1310" y="185" width="110" height="44" rx="5" fill="#FFFFFF" stroke="#02589B" stroke-width="2"/>
+                        <text x="1365" y="204" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="11" fill="#02589B">PANGKAS</text>
+                        <text x="1365" y="219" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="11" fill="#02589B">RAMBUT</text>
+
+                        <!-- Gerobak Martabak Telor (Kanan Depan) -->
+                        <rect x="1245" y="275" width="175" height="190" rx="8" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.5"/>
+                        <rect x="1258" y="290" width="148" height="40" rx="4" fill="#FACC15" stroke="#A16207" stroke-width="1.5"/>
+                        <text x="1332" y="308" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#713F12">MARTABAK</text>
+                        <text x="1332" y="323" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#713F12">TELOR</text>
+                        <rect x="1260" y="342" width="144" height="55" rx="4" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.5"/>
+                        <rect x="1258" y="408" width="148" height="40" rx="4" fill="#FACC15" stroke="#A16207" stroke-width="1.5"/>
+                        <text x="1332" y="426" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#713F12">MARTABAK</text>
+                        <text x="1332" y="441" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#713F12">TELOR</text>
+                        <circle cx="1275" cy="478" r="20" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                        <circle cx="1390" cy="478" r="20" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                    </g>
+                </svg>
+
+                <!-- Soft Radial White / Frosted Gradient Fade di Tengah agar Logo & Judul Tampil Tajam -->
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_46%,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.88)_45%,rgba(255,255,255,0.35)_80%,rgba(255,255,255,0.12)_100%)]"></div>
+                <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-50 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="animate-fade-in-up flex flex-col items-center">
+                    
+                    <!-- DUAL EMBLEM: LAMBANG KOTA SURAKARTA + LOGO RESMI UPTD PPKL -->
+                    <div class="inline-flex items-center justify-center gap-4 sm:gap-6 px-6 py-3.5 rounded-3xl bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/80 border border-slate-200/80 mb-7">
+                        <!-- Crest Perisai Kota Surakarta -->
+                        <div class="w-14 h-16 sm:w-16 sm:h-20 flex items-center justify-center" title="Pemerintah Kota Surakarta">
+                            <svg viewBox="0 0 120 145" class="w-full h-full drop-shadow-sm" xmlns="http://www.w3.org/2000/svg" aria-label="Lambang Kota Surakarta">
+                                <!-- Outer Shield -->
+                                <path d="M 12 10 L 108 10 L 108 75 C 108 110, 60 136, 60 136 C 60 136, 12 110, 12 75 Z" fill="#0F172A" stroke="#DC2626" stroke-width="4"/>
+                                <!-- Inner Green Field -->
+                                <path d="M 19 17 L 101 17 L 101 74 C 101 103, 60 127, 60 127 C 60 127, 19 103, 19 74 Z" fill="#059669"/>
+                                <!-- Top Stars -->
+                                <polygon points="32,26 34,31 39,31 35,34 36,39 32,36 28,39 29,34 25,31 30,31" fill="#FACC15"/>
+                                <polygon points="88,26 90,31 95,31 91,34 92,39 88,36 84,39 85,34 81,31 86,31" fill="#FACC15"/>
+                                <!-- Tugu Kebangkitan Nasional Surakarta -->
+                                <rect x="55" y="34" width="10" height="48" rx="2" fill="#FFFFFF"/>
+                                <polygon points="60,22 65,34 55,34" fill="#FACC15"/>
+                                <rect x="48" y="82" width="24" height="8" rx="1" fill="#E2E8F0"/>
+                                <!-- River Wave -->
+                                <path d="M 24 94 Q 42 89, 60 94 T 96 94 L 92 103 Q 60 118, 28 103 Z" fill="#38BDF8"/>
+                                <!-- Padi & Kapas Wreath -->
+                                <path d="M 56 122 C 32 112, 22 92, 24 68" fill="none" stroke="#FACC15" stroke-width="3.5" stroke-linecap="round"/>
+                                <path d="M 64 122 C 88 112, 98 92, 96 68" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+                                <circle cx="60" cy="121" r="4" fill="#DC2626"/>
+                            </svg>
+                        </div>
+
+                        <div class="h-12 w-px bg-slate-200"></div>
+
+                        <!-- Emblem Resmi UPTD PPKL -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center" title="UPTD Pengelolaan Pedagang Kaki Lima">
+                            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-sm" xmlns="http://www.w3.org/2000/svg" aria-label="Emblem UPTD PPKL">
+                                <path d="M 48 38 A 78 78 0 1 1 28 130" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                                <path d="M 25 118 A 78 78 0 0 1 43 44" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                                <polygon points="22,42 54,30 44,62" fill="#02589B"/>
+                                <path d="M 100 32 A 68 68 0 0 1 168 100 A 68 68 0 0 1 65 158" fill="none" stroke="#F97316" stroke-width="13" stroke-linecap="butt"/>
+                                <g fill="#F97316">
+                                    <rect x="114" y="19" width="14" height="12" rx="2" transform="rotate(14 121 25)"/>
+                                    <rect x="145" y="34" width="14" height="12" rx="2" transform="rotate(38 152 40)"/>
+                                    <rect x="166" y="61" width="14" height="12" rx="2" transform="rotate(64 173 67)"/>
+                                    <rect x="171" y="94" width="14" height="12" rx="2" transform="rotate(90 178 100)"/>
+                                    <rect x="162" y="126" width="14" height="12" rx="2" transform="rotate(116 169 132)"/>
+                                    <rect x="139" y="152" width="14" height="12" rx="2" transform="rotate(142 146 158)"/>
+                                    <rect x="108" y="166" width="14" height="12" rx="2" transform="rotate(168 115 172)"/>
+                                    <rect x="75" y="162" width="14" height="12" rx="2" transform="rotate(194 82 168)"/>
+                                </g>
+                                <g fill="#FFFFFF">
+                                    <circle cx="122" cy="36" r="2.8"/>
+                                    <circle cx="147" cy="54" r="2.8"/>
+                                    <circle cx="163" cy="80" r="2.8"/>
+                                    <circle cx="165" cy="111" r="2.8"/>
+                                    <circle cx="151" cy="138" r="2.8"/>
+                                    <circle cx="126" cy="157" r="2.8"/>
+                                    <circle cx="95" cy="163" r="2.8"/>
+                                </g>
+                                <path d="M 65 156 C 34 126, 32 68, 78 36" fill="none" stroke="#059669" stroke-width="4.5" stroke-linecap="round"/>
+                                <g fill="#059669">
+                                    <ellipse cx="52" cy="144" rx="11" ry="5" transform="rotate(28 52 144)"/>
+                                    <ellipse cx="42" cy="122" rx="12" ry="5" transform="rotate(42 42 122)"/>
+                                    <ellipse cx="38" cy="98" rx="12" ry="5" transform="rotate(62 38 98)"/>
+                                    <ellipse cx="43" cy="74" rx="12" ry="5" transform="rotate(84 43 74)"/>
+                                    <ellipse cx="55" cy="53" rx="12" ry="5" transform="rotate(112 55 53)"/>
+                                    <ellipse cx="75" cy="38" rx="12" ry="5" transform="rotate(142 75 38)"/>
+                                    <ellipse cx="59" cy="128" rx="10" ry="4.5" transform="rotate(-24 59 128)"/>
+                                    <ellipse cx="52" cy="105" rx="10" ry="4.5" transform="rotate(-10 52 105)"/>
+                                    <ellipse cx="53" cy="82" rx="10" ry="4.5" transform="rotate(12 53 82)"/>
+                                    <ellipse cx="63" cy="61" rx="10" ry="4.5" transform="rotate(35 63 61)"/>
+                                </g>
+                                <circle cx="100" cy="100" r="46" fill="#0A402A"/>
+                                <circle cx="100" cy="100" r="41" fill="none" stroke="#F97316" stroke-width="2.5"/>
+                                <text x="100" y="95" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">UPTD</text>
+                                <text x="100" y="119" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">PPKL</text>
+                            </svg>
+                        </div>
+                    </div>
+
                     <!-- Badge Resmi -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-amber-300 text-xs sm:text-sm font-medium mb-6">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Dinas Perdagangan • Pemerintah Kota Surakarta</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-900/10 border border-forest-900/15 text-forest-900 text-xs sm:text-sm font-bold tracking-wide mb-4">
+                        <span class="w-2 h-2 rounded-full bg-brandEmerald-600 animate-pulse"></span>
+                        <span>DINAS PERDAGANGAN • PEMERINTAH KOTA SURAKARTA</span>
                     </div>
 
                     <!-- Judul Utama -->
-                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.4rem] leading-[1.15] tracking-tight text-white mb-6">
-                        Penataan & Pemberdayaan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">Pedagang Kaki Lima</span> Kota Surakarta
+                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.35rem] leading-[1.15] tracking-tight text-forest-950 mb-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
+                        UPTD PENGELOLAAN<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-forest-900 via-brandBlue-700 to-brandOrange-600">
+                            PEDAGANG KAKI LIMA
+                        </span><br>
+                        <span class="text-2xl sm:text-4xl lg:text-[2.6rem] text-slate-900">KOTA SURAKARTA</span>
                     </h1>
 
                     <!-- Deskripsi Singkat -->
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-9 max-w-2xl">
-                        Mewujudkan tata kelola kawasan usaha PKL yang tertib, bersih, nyaman, serta mendorong kemandirian ekonomi kerakyatan berbasis transparansi data digital di Kota Surakarta.
+                    <p class="text-base sm:text-lg text-slate-700 font-medium leading-relaxed mb-9 max-w-2xl bg-white/75 backdrop-blur-xs px-4 py-2 rounded-2xl">
+                        Mewujudkan tata kelola kawasan usaha PKL yang tertib, bersih, nyaman, serta mendorong kemandirian ekonomi kerakyatan berbasis transparansi data digital.
                     </p>
 
                     <!-- 2 Tombol CTA Utama Membuka Modal Data -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full sm:w-auto">
                         <button type="button" 
                                 onclick="openDataModal('shelter')"
-                                class="group inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-display font-bold text-sm sm:text-base shadow-lg shadow-amber-500/25 hover:shadow-amber-400/40 transition-all duration-200 cursor-pointer">
-                            <i data-lucide="store" class="w-5 h-5 text-navy-950"></i>
+                                class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-forest-900/20 hover:shadow-forest-900/30 transition-all duration-200 cursor-pointer">
+                            <i data-lucide="store" class="w-5 h-5 text-brandOrange-400"></i>
                             <span>Data PKL Shelter Surakarta</span>
                             <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                         </button>
 
                         <button type="button" 
                                 onclick="openDataModal('nonshelter')"
-                                class="group inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-display font-semibold text-sm sm:text-base backdrop-blur-sm transition-all duration-200 cursor-pointer">
-                            <i data-lucide="map-pinned" class="w-5 h-5 text-amber-400"></i>
+                                class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-brandOrange-500/25 hover:shadow-brandOrange-600/35 transition-all duration-200 cursor-pointer">
+                            <i data-lucide="map-pinned" class="w-5 h-5 text-white"></i>
                             <span>Data Zona Retribusi Non-Shelter</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-300 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                         </button>
                     </div>
                 </div>
@@ -206,12 +452,12 @@
                 <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md shadow-slate-200/70 border border-slate-100 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Kawasan Shelter</span>
-                        <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-lg bg-orange-50 text-brandOrange-600 flex items-center justify-center">
                             <i data-lucide="warehouse" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <div>
-                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-navy-900">24+</div>
+                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-forest-900">24+</div>
                         <p class="text-xs text-slate-500 mt-1">Titik shelter aktif terkelola</p>
                     </div>
                 </div>
@@ -220,12 +466,12 @@
                 <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md shadow-slate-200/70 border border-slate-100 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Zona Retribusi</span>
-                        <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-lg bg-sky-50 text-brandBlue-700 flex items-center justify-center">
                             <i data-lucide="map" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <div>
-                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-navy-900">5 Kec.</div>
+                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-forest-900">5 Kec.</div>
                         <p class="text-xs text-slate-500 mt-1">Cakupan zona non-shelter</p>
                     </div>
                 </div>
@@ -234,12 +480,12 @@
                 <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md shadow-slate-200/70 border border-slate-100 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">PKL Terdata</span>
-                        <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-lg bg-emerald-50 text-brandEmerald-600 flex items-center justify-center">
                             <i data-lucide="users" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <div>
-                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-navy-900">4.200+</div>
+                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-forest-900">4.200+</div>
                         <p class="text-xs text-slate-500 mt-1">Pedagang terintegrasi sistem</p>
                     </div>
                 </div>
@@ -248,12 +494,12 @@
                 <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md shadow-slate-200/70 border border-slate-100 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Transparansi</span>
-                        <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-lg bg-forest-900/10 text-forest-900 flex items-center justify-center">
                             <i data-lucide="shield-check" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <div>
-                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-navy-900">Real-Time</div>
+                        <div class="font-display font-extrabold text-2xl sm:text-3xl text-forest-900">Real-Time</div>
                         <p class="text-xs text-slate-500 mt-1">Pembaruan basis data publik</p>
                     </div>
                 </div>
@@ -265,10 +511,10 @@
         <!-- ================================================================= -->
         <section id="layanan-data" class="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-orange-100 text-brandOrange-600 text-xs font-bold uppercase tracking-wider mb-3">
                     Portal Informasi Publik
                 </span>
-                <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-900 tracking-tight mb-4">
+                <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-forest-900 tracking-tight mb-4">
                     Layanan Data Terpadu PKL
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -280,12 +526,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
                 <!-- KARTU 1: Data PKL Shelter Kota Surakarta -->
-                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between overflow-hidden">
-                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-navy-900 via-amber-500 to-amber-400"></div>
+                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandEmerald-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-forest-900 via-brandEmerald-600 to-brandOrange-500"></div>
                     
                     <div>
                         <div class="flex items-start justify-between gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-navy-900 text-amber-400 flex items-center justify-center shadow-md shadow-navy-900/15 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-forest-900 text-brandOrange-400 flex items-center justify-center shadow-md shadow-forest-900/15 group-hover:scale-105 transition-transform duration-300">
                                 <i data-lucide="store" class="w-7 h-7"></i>
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
@@ -294,7 +540,7 @@
                             </span>
                         </div>
 
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-navy-900 mb-3 group-hover:text-amber-600 transition-colors">
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-forest-900 mb-3 group-hover:text-brandEmerald-600 transition-colors">
                             Data PKL Shelter Kota Surakarta
                         </h3>
                         
@@ -304,11 +550,11 @@
 
                         <ul class="space-y-2.5 text-sm text-slate-600 mb-8">
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0"></i>
                                 <span>Pencarian nama shelter, jenis dagangan & lokasi</span>
                             </li>
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0"></i>
                                 <span>Rekapitulasi kapasitas kios/lapak terisi & kosong</span>
                             </li>
                         </ul>
@@ -317,8 +563,8 @@
                     <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                         <button type="button" 
                                 onclick="openDataModal('shelter')"
-                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
-                            <i data-lucide="maximize-2" class="w-4 h-4 text-amber-400"></i>
+                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
+                            <i data-lucide="maximize-2" class="w-4 h-4 text-brandOrange-400"></i>
                             <span>Buka Data Shelter</span>
                         </button>
                         <a href="https://script.google.com/macros/s/AKfycbzEbBEswY5EavrH2juQI4V6O0OHHUgWxpnXqbS8HKDSe8cHb-NX1HERP98jJxRujK-b/exec" 
@@ -333,12 +579,12 @@
                 </div>
 
                 <!-- KARTU 2: Data Zona Retribusi PKL Non-Shelter -->
-                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between overflow-hidden">
-                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-amber-500 via-navy-800 to-navy-900"></div>
+                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandOrange-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brandOrange-500 via-brandBlue-700 to-forest-900"></div>
                     
                     <div>
                         <div class="flex items-start justify-between gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-amber-500 text-navy-950 flex items-center justify-center shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-brandOrange-500 text-white flex items-center justify-center shadow-md shadow-brandOrange-500/20 group-hover:scale-105 transition-transform duration-300">
                                 <i data-lucide="map-pinned" class="w-7 h-7"></i>
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
@@ -347,7 +593,7 @@
                             </span>
                         </div>
 
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-navy-900 mb-3 group-hover:text-amber-600 transition-colors">
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-forest-900 mb-3 group-hover:text-brandOrange-600 transition-colors">
                             Data Zona Retribusi PKL Non-Shelter
                         </h3>
                         
@@ -357,11 +603,11 @@
 
                         <ul class="space-y-2.5 text-sm text-slate-600 mb-8">
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0"></i>
                                 <span>Pemetaan titik zona & jam operasional yang diizinkan</span>
                             </li>
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0"></i>
                                 <span>Transparansi parameter retribusi & pembinaan wilayah</span>
                             </li>
                         </ul>
@@ -370,8 +616,8 @@
                     <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                         <button type="button" 
                                 onclick="openDataModal('nonshelter')"
-                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
-                            <i data-lucide="maximize-2" class="w-4 h-4 text-amber-400"></i>
+                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-brandBlue-700 hover:bg-brandBlue-600 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
+                            <i data-lucide="maximize-2" class="w-4 h-4 text-orange-200"></i>
                             <span>Buka Data Zona Retribusi</span>
                         </button>
                         <a href="https://script.google.com/macros/s/AKfycbxJSZwu06c8QhkUdaVyIT_zkfsWg6IWUrEX4nq5al0LXgSu3MUg7fCMjGrRw-NcSFeOKw/exec" 
@@ -395,10 +641,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
                     <div class="max-w-2xl">
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-navy-900 text-xs font-bold uppercase tracking-wider mb-3">
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-forest-900/10 text-forest-900 text-xs font-bold uppercase tracking-wider mb-3">
                             Profil & Mandat Instansi
                         </span>
-                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-900 tracking-tight">
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-forest-900 tracking-tight">
                             Pilar Utama Pengelolaan PKL Surakarta
                         </h2>
                     </div>
@@ -410,10 +656,10 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                     <!-- Pilar 1 -->
                     <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-lg transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-forest-900 text-brandOrange-400 flex items-center justify-center mb-5">
                             <i data-lucide="layout-grid" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2.5">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-2.5">
                             Penataan & Relokasi Shelter
                         </h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
@@ -423,10 +669,10 @@
 
                     <!-- Pilar 2 -->
                     <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-lg transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-brandBlue-700 text-white flex items-center justify-center mb-5">
                             <i data-lucide="receipt" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2.5">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-2.5">
                             Pengelolaan Retribusi Daerah
                         </h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
@@ -436,10 +682,10 @@
 
                     <!-- Pilar 3 -->
                     <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-lg transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-brandOrange-500 text-white flex items-center justify-center mb-5">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2.5">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-2.5">
                             Pembinaan & Pemberdayaan
                         </h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
@@ -455,10 +701,10 @@
         <!-- ================================================================= -->
         <section id="kontak" class="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-orange-100 text-brandOrange-600 text-xs font-bold uppercase tracking-wider mb-3">
                     Hubungi Kami
                 </span>
-                <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-900 tracking-tight mb-4">
+                <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-forest-900 tracking-tight mb-4">
                     Informasi Layanan & Kanal Resmi
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -470,10 +716,10 @@
                 <!-- Kartu 1: Alamat Kantor -->
                 <div class="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-navy-900 text-amber-400 flex items-center justify-center mb-5">
+                        <div class="w-12 h-12 rounded-2xl bg-forest-900 text-brandOrange-400 flex items-center justify-center mb-5">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-2">
                             Alamat Kantor Pelayanan
                         </h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
@@ -483,7 +729,7 @@
                     <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Aru+No.+13+Kepatihan+Wetan+Jebres+Surakarta" 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-slate-100 hover:bg-navy-900 text-navy-900 hover:text-white text-sm font-semibold transition-colors">
+                       class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-slate-100 hover:bg-forest-900 text-forest-900 hover:text-white text-sm font-semibold transition-colors">
                         <i data-lucide="navigation" class="w-4 h-4"></i>
                         <span>Buka di Google Maps</span>
                     </a>
@@ -493,7 +739,7 @@
                 <div class="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-2xl bg-amber-500 text-navy-950 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-2xl bg-brandOrange-500 text-white flex items-center justify-center">
                                 <i data-lucide="clock" class="w-6 h-6"></i>
                             </div>
                             <span id="card-status-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
@@ -501,17 +747,17 @@
                                 <span id="card-status-label">Jadwal Pelayanan</span>
                             </span>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-3">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-3">
                             Jam Operasional Kantor
                         </h3>
                         <div class="space-y-2.5 text-sm">
                             <div class="flex items-center justify-between py-2 border-b border-slate-100">
                                 <span class="text-slate-600 font-medium">Senin – Kamis</span>
-                                <span class="font-display font-bold text-navy-900">07.30 – 15.30 WIB</span>
+                                <span class="font-display font-bold text-forest-900">07.30 – 15.30 WIB</span>
                             </div>
                             <div class="flex items-center justify-between py-2 border-b border-slate-100">
                                 <span class="text-slate-600 font-medium">Jumat</span>
-                                <span class="font-display font-bold text-navy-900">07.30 – 14.30 WIB</span>
+                                <span class="font-display font-bold text-forest-900">07.30 – 14.30 WIB</span>
                             </div>
                             <div class="flex items-center justify-between pt-1">
                                 <span class="text-slate-500">Sabtu – Minggu</span>
@@ -524,30 +770,29 @@
                 <!-- Kartu 3: Website, Email & Media Sosial -->
                 <div class="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-navy-900 text-amber-400 flex items-center justify-center mb-5">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue-700 text-white flex items-center justify-center mb-5">
                             <i data-lucide="globe" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-navy-900 mb-3">
+                        <h3 class="font-display font-bold text-lg text-forest-900 mb-3">
                             Kanal Digital & Media Sosial
                         </h3>
                         <ul class="space-y-3 text-sm">
                             <li>
-                                <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-amber-50 text-slate-700 hover:text-navy-900 transition-colors group">
-                                    <i data-lucide="globe" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                                <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-forest-900 transition-colors group">
+                                    <i data-lucide="globe" class="w-4 h-4 text-brandOrange-600 shrink-0"></i>
                                     <span class="font-medium truncate">uptpkl.surakarta.go.id</span>
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-navy-900 shrink-0"></i>
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-forest-900 shrink-0"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:uptd.pkl@surakarta.go.id" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-amber-50 text-slate-700 hover:text-navy-900 transition-colors group">
-                                    <i data-lucide="mail" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                                <a href="mailto:uptd.pkl@surakarta.go.id" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-forest-900 transition-colors group">
+                                    <i data-lucide="mail" class="w-4 h-4 text-brandOrange-600 shrink-0"></i>
                                     <span class="font-medium truncate">uptd.pkl@surakarta.go.id</span>
-                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-navy-900 shrink-0"></i>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-forest-900 shrink-0"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/uptd.pengelolaan.pkl.surakarta?jplx=MWNmZGl0NTU0YmFsYg==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-pink-50 text-slate-700 hover:text-pink-700 transition-colors group">
-                                    <!-- Instagram SVG Icon -->
                                     <svg class="w-4 h-4 text-pink-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -558,13 +803,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.threads.net/@uptd.pkl.surakarta" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-200/70 text-slate-700 hover:text-navy-900 transition-colors group">
-                                    <!-- Threads SVG Icon -->
-                                    <svg class="w-4 h-4 text-navy-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <a href="https://www.threads.net/@uptd.pkl.surakarta" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-200/70 text-slate-700 hover:text-forest-900 transition-colors group">
+                                    <svg class="w-4 h-4 text-forest-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M19 12a7 7 0 1 0-7 7c4.5 0 7-2.5 7-6.5V11a3 3 0 0 0-6 0v2a1.5 1.5 0 0 0 3 0v-1"/>
                                     </svg>
                                     <span class="font-medium truncate">@uptd.pkl.surakarta</span>
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-navy-900 shrink-0"></i>
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5 ml-auto text-slate-400 group-hover:text-forest-900 shrink-0"></i>
                                 </a>
                             </li>
                         </ul>
@@ -577,39 +821,49 @@
     <!-- ===================================================================== -->
     <!-- 7. FOOTER RESMI                                                       -->
     <!-- ===================================================================== -->
-    <footer class="bg-navy-950 text-slate-300 pt-16 pb-10 border-t border-navy-800">
+    <footer class="bg-forest-950 text-slate-300 pt-16 pb-10 border-t border-forest-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
                 <!-- Kolom 1: Identitas -->
                 <div class="lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-navy-950 flex items-center justify-center font-bold">
-                            <i data-lucide="landmark" class="w-5 h-5"></i>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-white p-1 flex items-center justify-center shrink-0">
+                            <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-label="Logo UPTD PPKL">
+                                <path d="M 48 38 A 78 78 0 1 1 28 130" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                                <path d="M 25 118 A 78 78 0 0 1 43 44" fill="none" stroke="#02589B" stroke-width="11" stroke-linecap="round"/>
+                                <polygon points="22,42 54,30 44,62" fill="#02589B"/>
+                                <path d="M 100 32 A 68 68 0 0 1 168 100 A 68 68 0 0 1 65 158" fill="none" stroke="#F97316" stroke-width="13"/>
+                                <path d="M 65 156 C 34 126, 32 68, 78 36" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round"/>
+                                <circle cx="100" cy="100" r="46" fill="#0A402A"/>
+                                <circle cx="100" cy="100" r="41" fill="none" stroke="#F97316" stroke-width="2.5"/>
+                                <text x="100" y="95" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22">UPTD</text>
+                                <text x="100" y="119" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22">PPKL</text>
+                            </svg>
                         </div>
                         <div>
                             <h4 class="font-display font-bold text-white text-lg leading-tight">UPTD Pengelolaan PKL</h4>
-                            <p class="text-xs text-amber-400">Dinas Perdagangan Kota Surakarta</p>
+                            <p class="text-xs text-brandOrange-400 font-semibold">Dinas Perdagangan Kota Surakarta</p>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed max-w-md mb-6">
+                    <p class="text-sm text-slate-300/80 leading-relaxed max-w-md mb-6">
                         Unit Pelaksana Teknis Daerah yang bertugas melaksanakan kegiatan teknis operasional dan penunjang di bidang penataan, pembinaan, dan pengelolaan Pedagang Kaki Lima di Kota Surakarta.
                     </p>
                     <!-- Ikon Media Sosial Footer -->
                     <div class="flex items-center gap-3">
-                        <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" aria-label="Website Resmi" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-amber-500 text-slate-300 hover:text-navy-950 flex items-center justify-center transition-colors">
+                        <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" aria-label="Website Resmi" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-brandOrange-500 text-slate-200 hover:text-white flex items-center justify-center transition-colors">
                             <i data-lucide="globe" class="w-4 h-4"></i>
                         </a>
-                        <a href="mailto:uptd.pkl@surakarta.go.id" aria-label="Email Resmi" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-amber-500 text-slate-300 hover:text-navy-950 flex items-center justify-center transition-colors">
+                        <a href="mailto:uptd.pkl@surakarta.go.id" aria-label="Email Resmi" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-brandOrange-500 text-slate-200 hover:text-white flex items-center justify-center transition-colors">
                             <i data-lucide="mail" class="w-4 h-4"></i>
                         </a>
-                        <a href="https://www.instagram.com/uptd.pengelolaan.pkl.surakarta?jplx=MWNmZGl0NTU0YmFsYg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram UPTD PKL Surakarta" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-amber-500 text-slate-300 hover:text-navy-950 flex items-center justify-center transition-colors">
+                        <a href="https://www.instagram.com/uptd.pengelolaan.pkl.surakarta?jplx=MWNmZGl0NTU0YmFsYg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram UPTD PKL Surakarta" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-brandOrange-500 text-slate-200 hover:text-white flex items-center justify-center transition-colors">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
                             </svg>
                         </a>
-                        <a href="https://www.threads.net/@uptd.pkl.surakarta" target="_blank" rel="noopener noreferrer" aria-label="Threads UPTD PKL Surakarta" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-amber-500 text-slate-300 hover:text-navy-950 flex items-center justify-center transition-colors">
+                        <a href="https://www.threads.net/@uptd.pkl.surakarta" target="_blank" rel="noopener noreferrer" aria-label="Threads UPTD PKL Surakarta" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-brandOrange-500 text-slate-200 hover:text-white flex items-center justify-center transition-colors">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M19 12a7 7 0 1 0-7 7c4.5 0 7-2.5 7-6.5V11a3 3 0 0 0-6 0v2a1.5 1.5 0 0 0 3 0v-1"/>
                             </svg>
@@ -622,17 +876,17 @@
                     <h5 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Layanan Digital</h5>
                     <ul class="space-y-3 text-sm">
                         <li>
-                            <button type="button" onclick="openDataModal('shelter')" class="text-slate-400 hover:text-amber-400 transition-colors text-left cursor-pointer">
+                            <button type="button" onclick="openDataModal('shelter')" class="text-slate-300/80 hover:text-brandOrange-400 transition-colors text-left cursor-pointer">
                                 &rarr; Data PKL Shelter Surakarta
                             </button>
                         </li>
                         <li>
-                            <button type="button" onclick="openDataModal('nonshelter')" class="text-slate-400 hover:text-amber-400 transition-colors text-left cursor-pointer">
+                            <button type="button" onclick="openDataModal('nonshelter')" class="text-slate-300/80 hover:text-brandOrange-400 transition-colors text-left cursor-pointer">
                                 &rarr; Data Zona Retribusi Non-Shelter
                             </button>
                         </li>
                         <li>
-                            <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition-colors">
+                            <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" class="text-slate-300/80 hover:text-brandOrange-400 transition-colors">
                                 &rarr; uptpkl.surakarta.go.id
                             </a>
                         </li>
@@ -642,27 +896,27 @@
                 <!-- Kolom 3: Kontak & Jam Pelayanan -->
                 <div>
                     <h5 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Kantor & Jam Pelayanan</h5>
-                    <ul class="space-y-3 text-sm text-slate-400">
+                    <ul class="space-y-3 text-sm text-slate-300/80">
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0 mt-1"></i>
+                            <i data-lucide="map-pin" class="w-4 h-4 text-brandOrange-400 shrink-0 mt-1"></i>
                             <span>Jl. Aru No. 13 Kepatihan Wetan, Jebres, Surakarta</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0 mt-1"></i>
+                            <i data-lucide="clock" class="w-4 h-4 text-brandOrange-400 shrink-0 mt-1"></i>
                             <div>
                                 <p>Senin – Kamis: 07.30 – 15.30 WIB</p>
                                 <p>Jumat: 07.30 – 14.30 WIB</p>
                             </div>
                         </li>
                         <li class="flex items-center gap-2.5">
-                            <i data-lucide="mail" class="w-4 h-4 text-amber-400 shrink-0"></i>
-                            <a href="mailto:uptd.pkl@surakarta.go.id" class="hover:text-amber-400 transition-colors">uptd.pkl@surakarta.go.id</a>
+                            <i data-lucide="mail" class="w-4 h-4 text-brandOrange-400 shrink-0"></i>
+                            <a href="mailto:uptd.pkl@surakarta.go.id" class="hover:text-brandOrange-400 transition-colors">uptd.pkl@surakarta.go.id</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <p>&copy; <span id="current-year">2026</span> UPTD Pengelolaan PKL - Pemerintah Kota Surakarta. Hak Cipta Dilindungi.</p>
                 <p>Portal Informasi Layanan Publik Terpadu</p>
             </div>
@@ -681,25 +935,25 @@
         <!-- Backdrop Gelap dengan Blur -->
         <div id="modal-backdrop" 
              onclick="closeDataModal()" 
-             class="fixed inset-0 bg-navy-950/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+             class="fixed inset-0 bg-forest-950/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
 
         <!-- Kontainer Utama Modal (Full-screen di mobile, 95vw x 90vh di desktop) -->
         <div id="modal-panel" 
              class="relative z-10 w-full h-full sm:w-[95vw] sm:h-[90vh] max-w-[1600px] bg-white sm:rounded-3xl shadow-2xl border-0 sm:border border-slate-200 flex flex-col overflow-hidden transform scale-95 opacity-0 transition-all duration-300">
             
             <!-- Modal Header -->
-            <div class="bg-navy-900 text-white px-4 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between gap-3 border-b border-navy-800 shrink-0">
+            <div class="bg-forest-900 text-white px-4 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between gap-3 border-b border-forest-800 shrink-0">
                 <div class="flex items-center gap-3 min-w-0">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-navy-950 flex items-center justify-center shrink-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brandOrange-500 text-white flex items-center justify-center shrink-0">
                         <i data-lucide="database" class="w-5 h-5"></i>
                     </div>
                     <div class="min-w-0">
                         <div class="flex items-center gap-2">
-                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-brandOrange-400">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                 Live Data Portal
                             </span>
-                            <span id="modal-url-preview" class="hidden lg:inline-block text-[11px] text-slate-400 truncate max-w-xs font-mono">
+                            <span id="modal-url-preview" class="hidden lg:inline-block text-[11px] text-slate-300 truncate max-w-xs font-mono">
                                 script.google.com/macros/...
                             </span>
                         </div>
@@ -726,7 +980,7 @@
                        target="_blank" 
                        rel="noopener noreferrer"
                        title="Buka di Tab Baru"
-                       class="p-2 sm:px-3.5 sm:py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 text-xs font-bold inline-flex items-center gap-1.5 transition-colors">
+                       class="p-2 sm:px-3.5 sm:py-2 rounded-xl bg-brandOrange-500 hover:bg-brandOrange-600 text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors">
                         <i data-lucide="external-link" class="w-4 h-4"></i>
                         <span class="hidden sm:inline">Buka di Tab Baru</span>
                     </a>
@@ -746,8 +1000,8 @@
                 
                 <!-- Loading Spinner Overlay -->
                 <div id="iframe-loader" class="absolute inset-0 z-10 bg-slate-50 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-300">
-                    <div class="w-12 h-12 rounded-full border-4 border-slate-200 border-t-amber-500 animate-spin mb-4"></div>
-                    <p class="font-display font-bold text-navy-900 text-base mb-1">Menghubungkan ke Server Data...</p>
+                    <div class="w-12 h-12 rounded-full border-4 border-slate-200 border-t-brandOrange-500 animate-spin mb-4"></div>
+                    <p class="font-display font-bold text-forest-900 text-base mb-1">Menghubungkan ke Server Data...</p>
                     <p class="text-xs sm:text-sm text-slate-500 max-w-sm">
                         Mohon tunggu sejenak selagi sistem memuat basis data Google Apps Script UPTD Pengelolaan PKL.
                     </p>
