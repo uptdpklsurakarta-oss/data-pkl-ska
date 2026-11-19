@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPTD Pengelolaan PKL - Dinas Perdagangan Kota Surakarta</title>
-    <meta name="description" content="Portal Resmi Informasi Publik, Layanan Data Shelter, dan Zona Retribusi Non-Shelter UPTD Pengelolaan PKL Dinas Perdagangan Kota Surakarta.">
+    <meta name="description" content="Portal Resmi Informasi Publik, Layanan Data Shelter, Zona Retribusi Non-Shelter, dan Data PKL CFD UPTD Pengelolaan PKL Dinas Perdagangan Kota Surakarta.">
     
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,9 +162,10 @@
                 </a>
 
                 <!-- Navigasi Desktop -->
-                <nav class="hidden md:flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-7">
                     <a href="#beranda" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Beranda</a>
                     <a href="#layanan-data" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Layanan Data</a>
+                    <button type="button" onclick="openDataModal('cfd')" class="text-sm font-semibold text-brandBlue-700 hover:text-brandOrange-600 transition-colors cursor-pointer">Data PKL CFD</button>
                     <a href="#tentang-uptd" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Tugas & Fungsi</a>
                     <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-forest-900 transition-colors">Kontak & Lokasi</a>
                 </nav>
@@ -189,6 +190,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2 shadow-lg">
             <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Beranda</a>
             <a href="#layanan-data" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Layanan Data</a>
+            <button type="button" onclick="openDataModal('cfd')" class="mobile-nav-link w-full text-left block px-3 py-2.5 rounded-lg text-base font-semibold text-brandBlue-700 hover:bg-sky-50">Data PKL CFD</button>
             <a href="#tentang-uptd" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Tugas & Fungsi</a>
             <a href="#kontak" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-forest-900 hover:bg-slate-50">Kontak & Lokasi</a>
             <div class="pt-2">
@@ -323,7 +325,7 @@
                 <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-50 to-transparent"></div>
             </div>
             
-            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="animate-fade-in-up flex flex-col items-center">
                     
                     <!-- Badge Resmi -->
@@ -346,21 +348,29 @@
                         Mewujudkan tata kelola kawasan usaha PKL yang tertib, bersih, nyaman, serta mendorong kemandirian ekonomi kerakyatan berbasis transparansi data digital.
                     </p>
 
-                    <!-- 2 Tombol CTA Utama Membuka Modal Data -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full sm:w-auto">
+                    <!-- 3 Tombol CTA Utama Membuka Modal Data -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3.5 w-full sm:w-auto">
                         <button type="button" 
                                 onclick="openDataModal('shelter')"
-                                class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-forest-900/20 hover:shadow-forest-900/30 transition-all duration-200 cursor-pointer">
+                                class="group inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-forest-900/20 hover:shadow-forest-900/30 transition-all duration-200 cursor-pointer">
                             <i data-lucide="store" class="w-5 h-5 text-brandOrange-400"></i>
-                            <span>Data PKL Shelter Surakarta</span>
+                            <span>Data PKL Shelter</span>
                             <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                         </button>
 
                         <button type="button" 
                                 onclick="openDataModal('nonshelter')"
-                                class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-brandOrange-500/25 hover:shadow-brandOrange-600/35 transition-all duration-200 cursor-pointer">
+                                class="group inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-brandOrange-500/25 hover:shadow-brandOrange-600/35 transition-all duration-200 cursor-pointer">
                             <i data-lucide="map-pinned" class="w-5 h-5 text-white"></i>
-                            <span>Data Zona Retribusi Non-Shelter</span>
+                            <span>Zona Retribusi Non-Shelter</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </button>
+
+                        <button type="button" 
+                                onclick="openDataModal('cfd')"
+                                class="group inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-brandBlue-700 hover:bg-brandBlue-600 text-white font-display font-bold text-sm sm:text-base shadow-xl shadow-brandBlue-700/25 hover:shadow-brandBlue-600/35 transition-all duration-200 cursor-pointer">
+                            <i data-lucide="calendar-days" class="w-5 h-5 text-orange-200"></i>
+                            <span>Data PKL CFD</span>
                             <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                         </button>
                     </div>
@@ -397,7 +407,7 @@
                     </div>
                     <div>
                         <div class="font-display font-extrabold text-2xl sm:text-3xl text-forest-900">5 Kecamatan</div>
-                        <p class="text-xs text-slate-500 mt-1">Cakupan zona non-shelter</p>
+                        <p class="text-xs text-slate-500 mt-1">Cakupan zona non-shelter & CFD</p>
                     </div>
                 </div>
 
@@ -443,21 +453,21 @@
                     Layanan Data Terpadu PKL
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Akses basis data resmi pengelolaan shelter dan zona retribusi non-shelter Kota Surakarta secara interaktif langsung melalui jendela aplikasi di bawah ini.
+                    Akses basis data resmi pengelolaan shelter, zona retribusi non-shelter, serta pendataan PKL Car Free Day (CFD) Kota Surakarta secara interaktif langsung melalui jendela aplikasi di bawah ini.
                 </p>
             </div>
 
-            <!-- Grid 2 Kartu Layanan Interaktif -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Grid 3 Kartu Layanan Interaktif -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
                 
                 <!-- KARTU 1: Data PKL Shelter Kota Surakarta -->
-                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandEmerald-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="group relative bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandEmerald-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
                     <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-forest-900 via-brandEmerald-600 to-brandOrange-500"></div>
                     
                     <div>
                         <div class="flex items-start justify-between gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-forest-900 text-brandOrange-400 flex items-center justify-center shadow-md shadow-forest-900/15 group-hover:scale-105 transition-transform duration-300">
-                                <i data-lucide="store" class="w-7 h-7"></i>
+                            <div class="w-13 h-13 p-3 rounded-2xl bg-forest-900 text-brandOrange-400 flex items-center justify-center shadow-md shadow-forest-900/15 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="store" class="w-6 h-6"></i>
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -465,30 +475,30 @@
                             </span>
                         </div>
 
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-forest-900 mb-3 group-hover:text-brandEmerald-600 transition-colors">
+                        <h3 class="font-display font-bold text-xl text-forest-900 mb-3 group-hover:text-brandEmerald-600 transition-colors">
                             Data PKL Shelter Kota Surakarta
                         </h3>
                         
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
                             Direktori lengkap informasi lokasi shelter resmi, kapasitas lapak, profil pedagang terdata, serta status okupansi kawasan penataan PKL di seluruh wilayah Kota Surakarta.
                         </p>
 
                         <ul class="space-y-2.5 text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0"></i>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0 mt-0.5"></i>
                                 <span>Pencarian nama shelter, jenis dagangan & lokasi</span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0"></i>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandEmerald-600 shrink-0 mt-0.5"></i>
                                 <span>Rekapitulasi kapasitas kios/lapak terisi & kosong</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                         <button type="button" 
                                 onclick="openDataModal('shelter')"
-                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
+                                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
                             <i data-lucide="maximize-2" class="w-4 h-4 text-brandOrange-400"></i>
                             <span>Buka Data Shelter</span>
                         </button>
@@ -496,21 +506,21 @@
                            target="_blank" 
                            rel="noopener noreferrer"
                            title="Buka di Tab Baru"
-                           class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition-colors">
+                           class="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors">
                             <span>Tab Baru</span>
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- KARTU 2: Data Zona Retribusi PKL Non-Shelter -->
-                <div class="group relative bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandOrange-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="group relative bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandOrange-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
                     <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brandOrange-500 via-brandBlue-700 to-forest-900"></div>
                     
                     <div>
                         <div class="flex items-start justify-between gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-brandOrange-500 text-white flex items-center justify-center shadow-md shadow-brandOrange-500/20 group-hover:scale-105 transition-transform duration-300">
-                                <i data-lucide="map-pinned" class="w-7 h-7"></i>
+                            <div class="w-13 h-13 p-3 rounded-2xl bg-brandOrange-500 text-white flex items-center justify-center shadow-md shadow-brandOrange-500/20 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="map-pinned" class="w-6 h-6"></i>
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -518,40 +528,93 @@
                             </span>
                         </div>
 
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-forest-900 mb-3 group-hover:text-brandOrange-600 transition-colors">
+                        <h3 class="font-display font-bold text-xl text-forest-900 mb-3 group-hover:text-brandOrange-600 transition-colors">
                             Data Zona Retribusi PKL Non-Shelter
                         </h3>
                         
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
                             Informasi pemetaan zonasi ruas jalan/kawasan non-shelter yang diizinkan untuk kegiatan usaha PKL beserta ketentuan klasifikasi zona dan tata kelola retribusi daerah.
                         </p>
 
                         <ul class="space-y-2.5 text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0"></i>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0 mt-0.5"></i>
                                 <span>Pemetaan titik zona & jam operasional yang diizinkan</span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0"></i>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandOrange-500 shrink-0 mt-0.5"></i>
                                 <span>Transparansi parameter retribusi & pembinaan wilayah</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                         <button type="button" 
                                 onclick="openDataModal('nonshelter')"
-                                class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-brandBlue-700 hover:bg-brandBlue-600 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
-                            <i data-lucide="maximize-2" class="w-4 h-4 text-orange-200"></i>
-                            <span>Buka Data Zona Retribusi</span>
+                                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
+                            <i data-lucide="maximize-2" class="w-4 h-4 text-white"></i>
+                            <span>Buka Zona Retribusi</span>
                         </button>
                         <a href="https://uptdpklsurakarta-oss.github.io/petugas-retribusi-pkl/" 
                            target="_blank" 
                            rel="noopener noreferrer"
                            title="Buka di Tab Baru"
-                           class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition-colors">
+                           class="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors">
                             <span>Tab Baru</span>
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KARTU 3: Data PKL CFD -->
+                <div class="group relative bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandBlue-600/50 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brandBlue-700 via-brandEmerald-500 to-brandOrange-500"></div>
+                    
+                    <div>
+                        <div class="flex items-start justify-between gap-4 mb-6">
+                            <div class="w-13 h-13 p-3 rounded-2xl bg-brandBlue-700 text-white flex items-center justify-center shadow-md shadow-brandBlue-700/20 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="calendar-days" class="w-6 h-6"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                Database Aktif
+                            </span>
+                        </div>
+
+                        <h3 class="font-display font-bold text-xl text-forest-900 mb-3 group-hover:text-brandBlue-700 transition-colors">
+                            Data PKL Car Free Day (CFD)
+                        </h3>
+                        
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Basis data penataan lapak pedagang kaki lima pada pelaksanaan Car Free Day (CFD) Kota Surakarta, mencakup sebaran blok zona, jenis komoditas, dan ketertiban area.
+                        </p>
+
+                        <ul class="space-y-2.5 text-sm text-slate-600 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandBlue-600 shrink-0 mt-0.5"></i>
+                                <span>Pemetaan zona pedagang & blok penempatan CFD</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brandBlue-600 shrink-0 mt-0.5"></i>
+                                <span>Data pedagang terdaftar & monitoring ketertiban</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                        <button type="button" 
+                                onclick="openDataModal('cfd')"
+                                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brandBlue-700 hover:bg-brandBlue-600 text-white font-display font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer">
+                            <i data-lucide="maximize-2" class="w-4 h-4 text-orange-200"></i>
+                            <span>Buka Data PKL CFD</span>
+                        </button>
+                        <a href="https://script.google.com/macros/s/AKfycbx4DfILszvyFxntRorQFeX-qUOTaMPzPSV4s7wO4KT5kiRaNc-tGv3e-03k0qkRa62Qvg/exec" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="Buka di Tab Baru"
+                           class="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors">
+                            <span>Tab Baru</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
@@ -811,6 +874,11 @@
                             </button>
                         </li>
                         <li>
+                            <button type="button" onclick="openDataModal('cfd')" class="text-slate-300/80 hover:text-brandOrange-400 transition-colors text-left cursor-pointer">
+                                &rarr; Data PKL CFD
+                            </button>
+                        </li>
+                        <li>
                             <a href="https://uptpkl.surakarta.go.id" target="_blank" rel="noopener noreferrer" class="text-slate-300/80 hover:text-brandOrange-400 transition-colors">
                                 &rarr; uptpkl.surakarta.go.id
                             </a>
@@ -924,7 +992,7 @@
                     <div class="w-12 h-12 rounded-full border-4 border-slate-200 border-t-brandOrange-500 animate-spin mb-4"></div>
                     <p class="font-display font-bold text-forest-900 text-base mb-1">Menghubungkan ke Server Data...</p>
                     <p class="text-xs sm:text-sm text-slate-500 max-w-sm">
-                        Mohon tunggu sejenak selagi sistem memuat basis data Google Apps Script UPTD Pengelolaan PKL.
+                        Mohon tunggu sejenak selagi sistem memuat basis data UPTD Pengelolaan PKL.
                     </p>
                 </div>
 
@@ -970,6 +1038,11 @@
                 title: 'Data Zona Retribusi PKL Non-Shelter',
                 url: 'https://uptdpklsurakarta-oss.github.io/petugas-retribusi-pkl/',
                 shortUrl: 'uptdpklsurakarta-oss.github.io/petugas-retribusi-pkl/'
+            },
+            cfd: {
+                title: 'Data PKL CFD Kota Surakarta',
+                url: 'https://script.google.com/macros/s/AKfycbx4DfILszvyFxntRorQFeX-qUOTaMPzPSV4s7wO4KT5kiRaNc-tGv3e-03k0qkRa62Qvg/exec',
+                shortUrl: 'script.google.com/.../Data-PKL-CFD-Surakarta'
             }
         };
 
@@ -987,7 +1060,7 @@
 
         /**
          * Membuka Pop-up Modal dengan URL layanan data yang dipilih
-         * @param {'shelter' | 'nonshelter'} type
+         * @param {'shelter' | 'nonshelter' | 'cfd'} type
          */
         function openDataModal(type) {
             const source = DATA_SOURCES[type];
